@@ -53,17 +53,7 @@ async function run() {
 
     const testDatabase = client.db("test_DB");
     const testCollection = testDatabase.collection("test_collection");
-    
-    const dogosParadiseDatabase = client.db("dogos-paradise-database");
-    const dogsCollection = dogosParadiseDatabase.collection("dogs");
 
-    //GET dogs API (all)
-    app.get('/dogs', async(req, res) => {
-      const cursor = dogsCollection.find({});
-      const dogs = await cursor.toArray();
-      res.send(dogs);
-      // res.json(dogs);
-    })
 
   } finally {
     // await client.close();
@@ -72,7 +62,7 @@ async function run() {
 run().catch(console.dir);
 
 app.get('/', (req, res) => {
-  res.send('Hello Dogos Paradise!');
+  res.send('Hello Doctors Portal!');
 }); 
 
 app.listen(port, () => {

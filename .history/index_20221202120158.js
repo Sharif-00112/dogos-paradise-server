@@ -61,8 +61,8 @@ async function run() {
     app.get('/dogs', async(req, res) => {
       const cursor = dogsCollection.find({});
       const dogs = await cursor.toArray();
-      res.send(dogs);
-      // res.json(dogs);
+      // res.send(dogs);
+      res.json(dogs);
     })
 
   } finally {

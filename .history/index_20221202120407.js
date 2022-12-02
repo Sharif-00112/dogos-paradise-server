@@ -62,7 +62,7 @@ async function run() {
       const cursor = dogsCollection.find({});
       const dogs = await cursor.toArray();
       res.send(dogs);
-      // res.json(dogs);
+      res.json(dogs);
     })
 
   } finally {

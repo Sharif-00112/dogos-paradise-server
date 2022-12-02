@@ -53,17 +53,7 @@ async function run() {
 
     const testDatabase = client.db("test_DB");
     const testCollection = testDatabase.collection("test_collection");
-    
-    const dogosParadiseDatabase = client.db("dogos-paradise-database");
-    const dogsCollection = dogosParadiseDatabase.collection("dogs");
 
-    //GET dogs API (all)
-    app.get('/dogs', async(req, res) => {
-      const cursor = dogsCollection.find({});
-      const dogs = await cursor.toArray();
-      res.send(dogs);
-      // res.json(dogs);
-    })
 
   } finally {
     // await client.close();

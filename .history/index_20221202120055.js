@@ -57,13 +57,13 @@ async function run() {
     const dogosParadiseDatabase = client.db("dogos-paradise-database");
     const dogsCollection = dogosParadiseDatabase.collection("dogs");
 
-    //GET dogs API (all)
-    app.get('/dogs', async(req, res) => {
-      const cursor = dogsCollection.find({});
-      const dogs = await cursor.toArray();
-      res.send(dogs);
-      // res.json(dogs);
-    })
+    //GET appointment API (all)
+    // app.get('/appointments', async(req, res) => {
+    //   const cursor = appointmentCollection.find({});
+    //   const appointments = await cursor.toArray();
+    //   // res.send(appointments);
+    //   res.json(appointments);
+    // })
 
   } finally {
     // await client.close();
