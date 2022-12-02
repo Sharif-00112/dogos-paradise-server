@@ -6,10 +6,10 @@ require('dotenv').config();
 const port = process.env.PORT || 3005;
 
 //firebase admin initialization 
-//private_key_file-name: doctors-portal-00112-firebase-adminsdk-rhu8v-7c0acf8d5a.json
+//private_key_file-name: dogos-paradise-00112-firebase-adminsdk-rhu8v-7c0acf8d5a.json
 var admin = require("firebase-admin");
 // var serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
-// var serviceAccount = require('./doctors-portal-00112-firebase-adminsdk-rhu8v-7c0acf8d5a.json');
+// var serviceAccount = require('./dogos-paradise-00112-firebase-adminsdk-rhu8v-7c0acf8d5a.json');
 // admin.initializeApp({
 //   credential: admin.credential.cert(serviceAccount)
 // });
@@ -53,17 +53,7 @@ async function run() {
 
     const testDatabase = client.db("test_DB");
     const testCollection = testDatabase.collection("test_collection");
-    
-    const dogosParadiseDatabase = client.db("dogos-paradise-database");
-    const dogsCollection = dogosParadiseDatabase.collection("dogs");
 
-    //GET dogs API (all)
-    app.get('/dogs', async(req, res) => {
-      const cursor = dogsCollection.find({});
-      const dogs = await cursor.toArray();
-      res.send(dogs);
-      // res.json(dogs);
-    })
 
   } finally {
     // await client.close();
@@ -72,7 +62,7 @@ async function run() {
 run().catch(console.dir);
 
 app.get('/', (req, res) => {
-  res.send('Hello Dogos Paradise!');
+  res.send('Hello Doctors Portal!');
 }); 
 
 app.listen(port, () => {
@@ -81,7 +71,7 @@ app.listen(port, () => {
 
 
 // Database login information (.env)
-  // DB_USER=doctors-portal-user1
+  // DB_USER=dogos-paradise-user1
   // DB_PASS=EzVG0BwVrcOO3FdH
 
 
