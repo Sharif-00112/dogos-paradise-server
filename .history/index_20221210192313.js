@@ -67,14 +67,6 @@ async function run() {
       res.json(result);
     })
 
-    //GET messages API (all)
-    app.get('/messages', async(req, res) => {
-      const cursor = messageCollection.find({});
-      const messages = await cursor.toArray();
-      res.send(messages);
-      // res.json(messages);
-    })
-
     //GET dogs API (all)
     app.get('/dogs', async(req, res) => {
       const cursor = dogsCollection.find({});
