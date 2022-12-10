@@ -6,13 +6,13 @@ require('dotenv').config();
 const port = process.env.PORT || 3005;
 
 //firebase admin initialization 
-//private_key_file-name: dogos-paradise-firebase-adminsdk-iq4rt-fd599b345e.json
+//private_key_file-name: doctors-portal-00112-firebase-adminsdk-rhu8v-7c0acf8d5a.json
 var admin = require("firebase-admin");
 // var serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
-var serviceAccount = require('./dogos-paradise-firebase-adminsdk-iq4rt-fd599b345e.json');
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
+// var serviceAccount = require('./doctors-portal-00112-firebase-adminsdk-rhu8v-7c0acf8d5a.json');
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount)
+// });
 
 
 const app = express();
